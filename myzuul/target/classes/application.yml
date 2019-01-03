@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: my-zuul
+eureka:
+  instance:
+    hostname: zuulgateway
+  client:
+    service-url:
+      defaultZone: http://slave1:8761/eureka/
+zuul:
+  routes:
+    book:
+      path: /book/**
+      serviceId: bookservice
+    user:
+      path: /user/**
+      serviceId: userservice

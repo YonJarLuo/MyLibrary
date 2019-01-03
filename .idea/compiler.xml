@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bookservice" />
+        <module name="eurekaserver" />
+        <module name="manageweb" />
+        <module name="myzuul" />
+        <module name="saleweb" />
+        <module name="userservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="bookservice" target="1.7" />
+      <module name="eurekaserver" target="1.7" />
+      <module name="manageweb" target="1.7" />
+      <module name="MyLibrary" target="1.7" />
+      <module name="myzuul" target="1.7" />
+      <module name="saleweb" target="1.7" />
+      <module name="userservice" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

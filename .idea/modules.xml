@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyLibrary.iml" filepath="$PROJECT_DIR$/MyLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bookservice/bookservice.iml" filepath="$PROJECT_DIR$/bookservice/bookservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manageweb/manageweb.iml" filepath="$PROJECT_DIR$/manageweb/manageweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myzuul/myzuul.iml" filepath="$PROJECT_DIR$/myzuul/myzuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/saleweb/saleweb.iml" filepath="$PROJECT_DIR$/saleweb/saleweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userservice/userservice.iml" filepath="$PROJECT_DIR$/userservice/userservice.iml" />
+    </modules>
+  </component>
+</project>
