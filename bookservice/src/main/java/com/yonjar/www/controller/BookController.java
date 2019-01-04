@@ -13,12 +13,13 @@ import java.util.Date;
 @RestController
 public class BookController {
 
-    @GetMapping(value = "/querybook/{bookName}")
+    @GetMapping("/querybook/{bookName}")
     public Book findBookByName(@PathVariable String bookName){
 
+        System.out.println("进入到BookController的findBookByName方法");
         Book book = new Book();
         book.setAuthor("yonjar");
-        book.setBookName("SpringCloud");
+        book.setBookName(bookName);
         book.setBookId(9527);
         book.setPrice(100.0);
         book.setPublicationDate(new Date());

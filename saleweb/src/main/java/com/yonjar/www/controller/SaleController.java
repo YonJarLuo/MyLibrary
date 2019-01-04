@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @EnableFeignClients 开启Feign开关
  */
 @RestController("/sale-web")
-@Configuration
+//@Configuration
 public class SaleController {
 
     @Autowired
@@ -21,6 +21,7 @@ public class SaleController {
 
     @GetMapping("/findBook/{bookName}")
     public String findBook(@PathVariable String bookName){
+        System.out.println("进入到SaleController的findBook方法");
         Book book = bookservice.querybook(bookName);
         System.out.println(book.toString());
         return book.toString();

@@ -10,3 +10,8 @@ eureka:
     service-url:
     #注册Eureka服务器中，如果有多个，追加逗号,http://slave2:8762/eureka/
       defaultZone: http://slave1:8761/eureka/
+
+
+
+
+
