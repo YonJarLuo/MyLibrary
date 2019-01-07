@@ -2,8 +2,8 @@ spring:
   application:
     name: my-zuul
 eureka:
-  instance:
-    hostname: zuulgateway
+#  instance:
+#    hostname: my-zuul        有spring.application.name ，就不要添加eureka.instance.hostname
   client:
     service-url:
       defaultZone: http://slave1:8761/eureka/
@@ -11,10 +11,8 @@ zuul:
   routes:
     test:
       url: http://localhost:8765
-    testbook:
-      url: http://localhost:8765
-    book:
-      path: /book/**
+    book01:                       #这个名称随便写
+      path: /book/**              #浏览器访问  http://localhost:9000/book/... 就会代理到相应的服务
       serviceId: book-service
     user:
       path: /user/**

@@ -24,6 +24,7 @@ public class BookController {
         book.setPrice(100.0);
         book.setPublicationDate(new Date());
 
+        System.out.println(book.toString());
         return book;
     }
 }

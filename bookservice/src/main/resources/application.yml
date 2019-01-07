@@ -4,8 +4,8 @@ spring:
   application:
     name: book-service
 eureka:
-  instance:
-    hostname: bookservice
+#  instance:                         我自己给自己挖了坑，排查了很久...
+#    hostname: book-service          有spring.application.name ，就不要添加eureka.instance.hostname 不然zuul服务无法通过 path-serviceId进行代理跳转
   client:
     service-url:
     #注册Eureka服务器中，如果有多个，追加逗号,http://slave2:8762/eureka/

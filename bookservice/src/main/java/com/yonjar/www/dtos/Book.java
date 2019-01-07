@@ -1,16 +1,21 @@
 package com.yonjar.www.dtos;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by LuoYJ on 2019/1/3.
  */
-public class Book {
+public class Book implements Serializable{
     private int bookId;
     private String bookName;
     private String author;
     private double price;
     private Date publicationDate;
+
+    public Book() {
+        super();
+    }
 
     public String getBookName() {
         return bookName;
