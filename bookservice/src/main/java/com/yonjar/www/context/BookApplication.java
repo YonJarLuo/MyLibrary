@@ -1,6 +1,7 @@
 package com.yonjar.www.context;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.yonjar.www.**")
 @SpringBootApplication
 @EnableEurekaClient
+@EnableFeignClients("com.yonjar.www.service.gateway")   //此处为了测试Feign  使用@EnableFeignClients扫描指定包，不然无法启动
 public class BookApplication {
     public static void main(String[] args) {
         SpringApplication.run(BookApplication.class);

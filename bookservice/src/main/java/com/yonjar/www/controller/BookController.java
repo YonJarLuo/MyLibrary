@@ -1,6 +1,7 @@
 package com.yonjar.www.controller;
 
 import com.yonjar.www.dtos.Book;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +14,7 @@ import java.util.Date;
 @RestController
 public class BookController {
 
-    @GetMapping("/querybook/{bookName}")
+    @GetMapping(value = "/querybook/{bookName}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Book findBookByName(@PathVariable String bookName){
 
         System.out.println("进入到BookController的findBookByName方法");

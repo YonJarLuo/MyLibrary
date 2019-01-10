@@ -2,16 +2,32 @@ spring:
   application:
     name: my-zuul
 eureka:
-  instance:
-    hostname: zuulgateway
+#  instance:
+#    hostname: my-zuul
   client:
     service-url:
       defaultZone: http://slave1:8761/eureka/
 zuul:
   routes:
-    book:
+    test:
+      url: http://localhost:8765
+    testbook:
+      url: http://localhost:8765
+    book01:
       path: /book/**
-      serviceId: bookservice
+      serviceId: book-service
     user:
       path: /user/**
-      serviceId: userservice
+      serviceId: user-service
+
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 60000
+#ribbon:
+#  ReadTimeout: 60000
+#  ConnectTimeout: 60000

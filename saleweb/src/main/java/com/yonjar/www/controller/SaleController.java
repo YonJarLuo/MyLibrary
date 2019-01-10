@@ -1,11 +1,11 @@
 package com.yonjar.www.controller;
 
-import com.google.gson.Gson;
 import com.yonjar.www.dtos.Book;
-import com.yonjar.www.service.getway.BookClient;
+import com.yonjar.www.service.gateway.BookClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
  * http://localhost:8080/sale-web/findBook/123
  */
 @RestController
+@RequestMapping("/sale-web")
 public class SaleController {
 
     @Autowired
     private BookClient bookClient;
 
-    @GetMapping("/sale-web/findBook/{bookName}")
+    @GetMapping("/findBook/{bookName}")
     public Book findBook(@PathVariable String bookName){
         System.out.println("进入到SaleController的findBook方法");
 

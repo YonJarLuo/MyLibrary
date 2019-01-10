@@ -1,4 +1,4 @@
-package com.yonjar.www.service.getway;
+package com.yonjar.www.service.gateway;
 
 import feign.Contract;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
@@ -16,15 +16,14 @@ import org.springframework.http.converter.json.GsonHttpMessageConverter;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by LuoYJ on 2019/1/7.
  * Feign编码器
- * https://cloud.tencent.com/developer/article/1078480
+ * https://www.aliyun.com/jiaocheng/770538.html
  */
-@ImportAutoConfiguration({RibbonAutoConfiguration.class, FeignRibbonClientAutoConfiguration.class, FeignAutoConfiguration.class})
-@EnableFeignClients(basePackages={"com.yonjar.www.service.getway"})
+/*@ImportAutoConfiguration({RibbonAutoConfiguration.class, FeignRibbonClientAutoConfiguration.class, FeignAutoConfiguration.class})
+@EnableFeignClients(basePackages={"com.yonjar.www.service.gateway"})
 @Configuration
 public class FooConfiguration {
 
@@ -37,4 +36,4 @@ public class FooConfiguration {
         return new HttpMessageConverters(true,messageConverters);
 
     }
-}
+}*/

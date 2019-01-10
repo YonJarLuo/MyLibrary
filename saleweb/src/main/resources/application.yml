@@ -1,2 +1,5 @@
 server:
   port: 8080
+
+book-server-api:
+  url: http://localhost:9000/book
