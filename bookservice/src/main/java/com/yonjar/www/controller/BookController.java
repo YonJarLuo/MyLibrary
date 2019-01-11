@@ -23,23 +23,27 @@ public class BookController {
     private BookRepository bookRepository;
 
     @GetMapping(value = "/querybook/{bookName}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Book findBookByName(@PathVariable String bookName){
+    public BookEntity findBookByName(@PathVariable String bookName){
 
-        System.out.println("进入到BookController的findBookByName方法");
-        Book book = new Book();
+        System.out.println("....进入到BookController的findBookByName方法....");
+        /*Book book = new Book();
         book.setAuthor("yonjar");
         book.setBookName(bookName);
-        book.setBookId(9527);
-        book.setPrice(100.0);
-        book.setPublicationDate(new Date());
-
-        System.out.println(book.toString());
-        return book;
+        book.setId("9527");
+        book.setPrice(100.0);*/
+        /*System.out.println(book.toString());
+        return book;*/
+        BookEntity bookEntity = bookRepository.findByBookName(bookName);  //bookEntity返回的对象如果不是都是所需的，则可以通过转换对应的dto来接收
+        System.out.println(bookEntity.toString());
+        return bookEntity;
     }
 
     @GetMapping("/findAllBook")
     public List<Book> findAllBook(){
         List<BookEntity> all = bookRepository.findAll();
+        BookEntity bookEntity = all.get(0);
+        Date createTime = bookEntity.getCreateTime();
+        System.out.println(createTime);
         System.out.println(all.toString());
         return null;
     }

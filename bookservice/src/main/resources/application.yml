@@ -5,10 +5,11 @@ spring:
   application:
     name: book-service
   datasource:               #配置数据库连接
+    url: jdbc:mysql://localhost:3306/springboot?charset=utf8&useSSL=false
+    username: root
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springboot?charset=utf8
-    data-username: root
-    data-password: root
+
     tomcat:
       max-active: 20
       test-while-idle: true
@@ -16,10 +17,12 @@ spring:
       default-auto-commit: false
       min-idle: 15
       initial-size: 15
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    database: mysql   #数据源类型需要添加
   jackson:
     serialization: true
 

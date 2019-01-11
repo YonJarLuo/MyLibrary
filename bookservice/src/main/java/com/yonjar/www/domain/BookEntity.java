@@ -34,9 +34,9 @@ public class BookEntity extends BaseEntity{
     @Column(name = "author",columnDefinition = "varchar(10) default null comment '作者' ")
     private String author;
 
-    @Column(name = "price",columnDefinition = "double(7) default null comment '价格' ")
+    @Column(name = "price",columnDefinition = "double(5,2) default null comment '价格' ")
     private double price;
 
-    @Column(name = "publicationDate",columnDefinition = "date(10) default null comment '出版日期' ")
+    @Column(name = "publication_date",columnDefinition = "datetime default null comment '出版日期' ")
     private Date publicationDate;
 }

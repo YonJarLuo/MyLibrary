@@ -7,11 +7,10 @@ import java.util.Date;
  * Created by LuoYJ on 2019/1/3.
  */
 public class Book implements Serializable{
-    private int bookId;
+    private String id;
     private String bookName;
     private String author;
     private double price;
-    private Date publicationDate;
 
     public Book() {
         super();
@@ -41,30 +40,21 @@ public class Book implements Serializable{
         this.price = price;
     }
 
-    public Date getPublicationDate() {
-        return publicationDate;
+    public String getId() {
+        return id;
     }
 
-    public void setPublicationDate(Date publicationDate) {
-        this.publicationDate = publicationDate;
-    }
-
-    public int getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "bookId=" + bookId +
+                "id='" + id + '\'' +
                 ", bookName='" + bookName + '\'' +
                 ", author='" + author + '\'' +
                 ", price=" + price +
-                ", publicationDate=" + publicationDate +
                 '}';
     }
 }
