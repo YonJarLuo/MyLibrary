@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "book01",url = "${book-server-api.url}")
 public interface BookClient {
 
-    @GetMapping("/querybook/{bookName}")
-    Book querybook(@PathVariable("bookName") String bookName);
+    @GetMapping("/findBookByName/{bookName}")
+    Book findBookByName(@PathVariable("bookName") String bookName);
 
     /*@GetMapping(value = "/hello",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     String getHello();*/

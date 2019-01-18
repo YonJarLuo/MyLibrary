@@ -5,10 +5,7 @@ import com.yonjar.www.domain.BookEntity;
 import com.yonjar.www.dtos.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -22,7 +19,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-    @GetMapping(value = "/querybook/{bookName}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/findBookByName/{bookName}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public BookEntity findBookByName(@PathVariable String bookName){
 
         System.out.println("....进入到BookController的findBookByName方法....");
@@ -39,12 +36,30 @@ public class BookController {
     }
 
     @GetMapping("/findAllBook")
-    public List<Book> findAllBook(){
+    public List<BookEntity> findAllBook(){
         List<BookEntity> all = bookRepository.findAll();
-        BookEntity bookEntity = all.get(0);
+        /*BookEntity bookEntity = all.get(0);
         Date createTime = bookEntity.getCreateTime();
-        System.out.println(createTime);
+        System.out.println(createTime);*/
         System.out.println(all.toString());
-        return null;
+        return all;
+    }
+
+    /**
+     * @param bookEntity
+     * @RequestBody 利用对象去获取前端传来的数据
+     * @return
+     */
+    /*@PostMapping("/addBook")
+    public Boolean addBook(@RequestBody BookEntity bookEntity){*/
+    @GetMapping("/addBook")
+    public Boolean addBook(){
+        BookEntity bookEntity1 = new BookEntity();
+        bookEntity1.setAuthor("xinxixue");
+        bookEntity1.setBookName("weifen");
+        bookEntity1.setPrice(84.00);
+        bookEntity1.setPublicationDate(new Date());
+        BookEntity entity = bookRepository.saveAndFlush(bookEntity1);
+        return true;
     }
 }

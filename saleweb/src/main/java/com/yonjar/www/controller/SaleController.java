@@ -19,11 +19,11 @@ public class SaleController {
     @Autowired
     private BookClient bookClient;
 
-    @GetMapping("/findBook/{bookName}")
-    public Book findBook(@PathVariable String bookName){
+    @GetMapping("/findBookByName/{bookName}")
+    public Book findBookByName(@PathVariable String bookName){
         System.out.println("进入到SaleController的findBook方法");
 
-        Book book = bookClient.querybook(bookName);
+        Book book = bookClient.findBookByName(bookName);
         /*Gson gson = new Gson();
         String result = gson.toJson(book);
         System.out.println(result);*/
