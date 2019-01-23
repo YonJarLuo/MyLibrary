@@ -1,6 +1,7 @@
 package com.yonjar.www.controller;
 
 import com.yonjar.www.service.gateway.TestFeign;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by LuoYJ on 2019/1/8.
  */
 @RestController
+@Api(description = "测试Feign接口", tags = "TestFeignController")
 public class TestFeignController {
 
     @Autowired

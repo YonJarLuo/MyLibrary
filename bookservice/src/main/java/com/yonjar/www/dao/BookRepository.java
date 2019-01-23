@@ -16,4 +16,6 @@ public interface BookRepository extends JpaRepository<BookEntity,String>{
 
     //可以自定义查询方法，遵从驼峰命名法
     BookEntity findByBookName(String bookName);
+
+    void deleteByBookName(String bookName);
 }

@@ -39,6 +39,7 @@
     <junit.version>4.11</junit.version>
     <mysql.version>5.1.45</mysql.version>
     <lobmok.version>1.16.20</lobmok.version>
+    <springfox.version>2.6.1</springfox.version>
   </properties>
 
   <dependencyManagement>
@@ -79,6 +80,18 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+
+      <!--swagger-->
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${springfox.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>${springfox.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
