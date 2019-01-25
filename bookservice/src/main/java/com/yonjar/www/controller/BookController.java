@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -87,11 +88,12 @@ public class BookController {
         return entity==null?false:true;
     }
 
-    @ApiOperation(value = "删除书籍" , notes = "根据书名删除书籍")
-    @ApiImplicitParam(paramType = "query",name = "bookName",value = "书名",required = true,dataType = "String")
+    @ApiOperation(value = "删除书籍" , notes = "根据 id 删除书籍")
+    @ApiImplicitParam(paramType = "query",name = "id",value = "书id",required = true,dataType = "String")
     @DeleteMapping("/deletBook")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteBook(@RequestParam("bookName") String bookName){  //注意这里使用的是 @RequestParam注解  与@PathVariable不同
-        bookRepository.deleteByBookName(bookName);
+    public void deleteBook(@RequestParam("id") String id){  //注意这里使用的是 @RequestParam注解  与@PathVariable不同
+        //后面会添加service层
+        bookRepository.delete(id);
     }
 }

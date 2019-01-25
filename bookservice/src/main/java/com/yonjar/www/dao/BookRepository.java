@@ -2,6 +2,7 @@ package com.yonjar.www.dao;
 
 import com.yonjar.www.domain.BookEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by LuoYJ on 2019/1/10.
@@ -17,5 +18,4 @@ public interface BookRepository extends JpaRepository<BookEntity,String>{
     //可以自定义查询方法，遵从驼峰命名法
     BookEntity findByBookName(String bookName);
 
-    void deleteByBookName(String bookName);
 }
