@@ -41,6 +41,7 @@ public abstract class BaseService<T,K extends Serializable> {
 
     /**
      * 更新记录
+     * 使用反射
      * @param entity
      */
     @Transactional(readOnly = false)

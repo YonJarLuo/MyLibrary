@@ -1,5 +1,6 @@
 package com.yonjar.www.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
@@ -37,6 +38,7 @@ public class BookEntity extends BaseEntity{
     @Column(name = "price",columnDefinition = "double(5,2) default null comment '价格' ")
     private double price;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")  //如果是 String转Date 使用@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @Column(name = "publication_date",columnDefinition = "datetime default null comment '出版日期' ")
     private Date publicationDate;
 }
