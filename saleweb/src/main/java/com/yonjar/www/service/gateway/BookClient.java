@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * 如果是spring-cloud微服务集群内部使用，@FeignClient里面可以直接写 注册到Eureka的服务名serviceId：@FeignClient("book-service")
  */
 @FeignClient(name = "book01",url = "${book-server-api.url}")
+//@FeignClient("book-service")
 public interface BookClient {
 
     @GetMapping("/findBookByName/{bookName}")

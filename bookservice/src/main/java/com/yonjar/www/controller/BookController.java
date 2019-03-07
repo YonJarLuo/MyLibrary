@@ -60,6 +60,7 @@ public class BookController {
     /**
      * @param bookEntity
      * @RequestBody 利用对象去获取前端传来的数据
+     * @RequestBody 将前端传来的json数据转换为 对象
      * @return
      */
     @ApiOperation(value = "新增书籍" , notes = "新增书籍")

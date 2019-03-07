@@ -10,13 +10,13 @@ eureka:
 zuul:
   routes:
     test:
-      url: http://localhost:8765
+      url: http://localhost:8765  #简单路由
     book01:                       #这个名称随便写
       path: /book/**              #浏览器访问  http://localhost:9000/book/... 就会代理到相应的服务
       serviceId: book-service
     user:
       path: /user/**
-      serviceId: user-service
+      serviceId: user-service     #Ribbon路由 通过配置serviceId，将请求转发到集群的服务中
 
 
 #hystrix:

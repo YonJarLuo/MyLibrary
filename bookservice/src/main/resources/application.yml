@@ -1,9 +1,9 @@
-server:
-  port: 8765
-
+#server:
+#  port: 8765
 spring:
   application:
     name: book-service
+#  profiles: book01
   datasource:               #配置数据库连接
     url: jdbc:mysql://localhost:3306/springboot?charset=utf8&useSSL=false
     username: root
@@ -33,8 +33,5 @@ eureka:
     service-url:
     #注册Eureka服务器中，如果有多个，追加逗号,http://slave2:8762/eureka/
       defaultZone: http://slave1:8761/eureka/
-
-
-
 
 

@@ -11,12 +11,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * Created by LuoYJ on 2019/1/3.
- * 配置路由跳转时，serviceId是Spring.application.name,不是eureka的hostname
+ * 配置Ribbon路由跳转时，serviceId是Spring.application.name,不是eureka的hostname
  * 经过测试简单跳转没有问题：http:localhost:8080/test/hell
- * Ribbon跳转问题在排查
- * /*@EnableCircuitBreaker
-     @ServletComponentScan
-     @EnableFeignClients
  */
 @SpringBootApplication
 //@EnableDiscoveryClient
