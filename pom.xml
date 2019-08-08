@@ -16,7 +16,7 @@
     <module>eurekaserver</module>
     <module>saleweb</module>
     <module>manageweb</module>
-      <module>common</module>
+    <module>common</module>
   </modules>
 
   <name>MyLibrary</name>

@@ -30,7 +30,7 @@ import java.util.List;
  */
 
 @RestController
-@Api(value = "bookservice服务的RESTFUL API接口",description = "图书管理接口", tags = "BookController")
+@Api(value = "bookservice服务的RESTFUL API接口",description = "BookController", tags = "图书管理接口")
 public class BookController {
 
     @Autowired
@@ -71,7 +71,7 @@ public class BookController {
         return bookService.addBook(bookEntity);
     }
 
-    @ApiOperation(value = "删除书籍" , notes = "根据 id 删除书籍")
+    @ApiOperation(value = "删除书籍" , notes = "根据 id 删除书籍,也可使用ids集合删除，在dao层 @Param ids，结合动态sql实现")
     @ApiImplicitParam(paramType = "query",name = "id",value = "书id",required = true,dataType = "String")  //此处paramType:query  对应 @RequestParam
     @DeleteMapping("/deletBook")
     @ResponseStatus(HttpStatus.OK)

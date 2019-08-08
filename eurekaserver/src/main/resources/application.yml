@@ -6,7 +6,8 @@ server:
 #  profiles: slave1
 eureka:
   instance:
-    hostname: slave1
+    hostname: 127.0.0.1
+#    hostname: slave1
   client:
     register-with-eureka: false
     fetch-registry: false
