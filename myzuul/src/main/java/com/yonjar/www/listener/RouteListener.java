@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  * 监听ApplicationEvent RoutesRefreshedEvent
  *
  * 我觉得不需要另外写这个监听器，因为zuul内置有监听器
- * 在spring-cloud-netflix-core-1.4.4.RELEASE-sources.jar中的org.springframework.cloud.netflix.zuul.zuulZuulServerAutoConfiguration.java配置了监听事件。
+ * 另外由于spring容易监听了HeartbeatEvent事件，会触发刷新加载路由配置，所以就会看到日志每过30秒，刷新2次。如果再添加自定义的 RouteListener，就会刷3次
  */
 @Slf4j
 @Component
