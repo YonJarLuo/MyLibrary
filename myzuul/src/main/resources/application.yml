@@ -1,19 +1,25 @@
 spring:
   application:
     name: my-zuul
+  datasource:               #配置数据库连接
+    url: jdbc:mysql://localhost:3306/myself_database?charset=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
 eureka:
 #  instance:
 #    hostname: my-zuul        有spring.application.name ，就不要添加eureka.instance.hostname
   client:
     service-url:
-      defaultZone: http://slave1:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+    enabled: true                 #是否注册到注册中心
 zuul:
   routes:
     test:
       url: http://localhost:8765  #简单路由
-    book01:                       #这个名称随便写
-      path: /book/**              #浏览器访问  http://localhost:9000/book/... 就会代理到相应的服务
-      serviceId: book-service
+    #book01:                       #这个名称随便写
+      #path: /book/**              #浏览器访问  http://localhost:9000/book/... 就会代理到相应的服务
+      #serviceId: book-service     #动态路由，路由配置写到数据库中 2020.4.8 优化
     user:
       path: /user/**
       serviceId: user-service     #Ribbon路由 通过配置serviceId，将请求转发到集群的服务中

@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by LuoYJ on 2019/1/3.
  * 注意：需要在启动类里面添加需要扫描的controller，不然请求不到
  */
-@ComponentScan("com.yonjar.www.**")                     //添加需要扫描的controller
+@ComponentScan("com.yonjar.www.**")                     //添加需要扫描的controller 因为启动类和controller同级
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients("com.yonjar.www.service.gateway")   //此处为了测试Feign  使用@EnableFeignClients扫描指定包，不然无法启动
