@@ -15,7 +15,7 @@ import java.util.*;
 /**
  * @author luoyj
  * @date 2020/4/8.
- * 动态路由
+ * 动态路由,模仿DiscoveryClientRouteLocator
  * 把写在配置文件中的路由配置写到数据库中
  */
 @Slf4j

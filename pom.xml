@@ -29,6 +29,8 @@
     <relativePath/>
   </parent>
 
+<!--  Springcloud 与 Springboot 有对应版本关系-->
+<!--  https://spring.io/projects/spring-cloud-->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
