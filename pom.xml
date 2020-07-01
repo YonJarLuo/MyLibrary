@@ -40,7 +40,7 @@
     <spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
     <hystrix-dashboard.version>1.5.5</hystrix-dashboard.version>
     <junit.version>4.11</junit.version>
-    <mysql.version>5.1.45</mysql.version>
+    <mysql.version>8.0.16</mysql.version>
     <lobmok.version>1.16.20</lobmok.version>
     <springfox.version>2.6.1</springfox.version>
   </properties>
